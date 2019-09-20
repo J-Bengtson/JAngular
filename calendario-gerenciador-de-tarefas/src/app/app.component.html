@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    	<strong>
+      		<a class="navbar-brand"  [routerLink]="['/calendario']" (click)="window.location.reload()">{{title}}</a>
+  		</strong>
+    </div>
+    <ul class="nav navbar-nav">
+      <a class="navbar-brand" [routerLink]="['/calendario/dashboard']"  > Dashboard </a>
+    </ul>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<br><br>
+ <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; JBN</small>
+    </div>
+ </footer>
+<!-- Footer -->

@@ -1,0 +1,68 @@
+<div class="container-fluid ">
+	<div class="row">
+		<table class="table table-responsive" 
+		style="width:100%;height:100%">
+			<thead>
+				<tr>
+					<td class="btn btn-lg btn-danger" style="width:100px;height:40%;float:right;margin-top:34px" align="center" (click)="prevMes()"><span class="glyphicon glyphicon-chevron-left"></span>
+					</td>	
+					<td> 
+						<strong>
+							<h3 class='alert alert-danger'> 	  	      			{{ mes[getPonteiro().getMes()-1]}}/{{getPonteiro().getAno()}} 
+							</h3>
+						</strong>
+					</td>
+					<td class="btn btn-lg btn-danger" style="width:100px;height:40%;float:left;margin-top:34px" align="bottom" (click)="nextMes()"><span class="glyphicon glyphicon-chevron-right"></span>
+										
+					</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<div class="row seven-cols">
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Sab</div>
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Dom</div>
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Seg</div>
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Ter</div>
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Qua</div>
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Qui</div>
+		    <div class="semana col-md-1 col-sm-1 col-lg-1 col-xs-1">Sex</div>
+
+		</div>
+
+		<div class="row seven-cols" width="200px">
+			<div *ngFor='let x of [].constructor(calcularDiaDaSemana() )' class ="dia col-md-1 col-sm-1 col-lg-1 col-xs-1" style="visibility: hidden;">
+			</div>
+			<div *ngFor='let i of [].constructor(getPonteiro().getDiasDoMes()); let j = index'
+				class ="dia col-md-1 col-sm-1 col-lg-1 col-xs-1"
+				
+				
+				[ngClass]="{
+				'btn-light': true,
+				'btn-danger': verificaNumTarefas( j + 1),
+				'btn-success': isTodasTarefasConcluidas( j + 1  ,getPonteiro().getMes() ,  getPonteiro().getAno()),
+				'btn-warning': verificaHoje(j + 1),
+				'btn-secondary': verificaHoje(j + 1) && verificaNumTarefas( j + 1 )
+				}"
+
+				[routerLink]="['/calendario/listar' , (j + 1) , getPonteiro().getMes() , getPonteiro().getAno()]">
+				
+					{{ j + 1}} <!--  {{ getPonteiro().getMes()}} {{getHoje().getMes()}} -->
+
+					<div class="evento" *ngIf="verificaNumTarefas( j + 1 )">
+						<strong>
+					{{numTarefasSemConcluir( j + 1 , getPonteiro().getMes() , getPonteiro().getAno())}}
+						</strong>
+					</div>
+				</div>
+			</div>
+
+	</div>
+</div>
+
+ 

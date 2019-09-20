@@ -1,0 +1,131 @@
+td{
+
+  text-align:center;
+  align-items: center;
+}
+
+.container-fluid{
+	width: 49%;
+
+}
+
+
+.dia{
+
+	box-sizing: border-box;
+
+	font: 28px bold verdana;		
+
+	border: 3px solid white;	
+
+	text-align: center;
+
+  cursor: pointer;
+
+}
+
+.dia:hover{
+  box-sizing: border-box;
+
+  font: 28px bold verdana;    
+
+  border: 3px solid black;  
+
+  text-align: center;
+
+  cursor: pointer;
+
+}
+
+
+.semana {
+	box-sizing: border-box;
+
+	border: 1px solid black;
+
+	font: 20px bold verdana;
+
+	text-align: center;					  
+
+}
+
+.mes {
+
+	font: bold verdana;
+
+	text-align: center;
+
+}
+.evento {
+
+	position: relative;
+
+	font: 15px bold verdana;
+
+	color: black;
+  
+  bottom: 20px;	  
+
+  left: -20px;
+
+}﻿
+
+
+
+@media(min-width: 0px){
+
+ .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 
+  .seven-cols .col-xs-1
+   {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+    height: 40px;
+  }
+
+}
+
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 
+  .seven-cols .col-xs-1
+   {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+    height: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 
+   .seven-cols .col-xs-1
+   {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+	height: 40px;
+  }
+}
+
+/**
+ *  The following is not really needed in this case
+ *  Only to demonstrate the usage of @media for large screens
+ */    
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 
+   .seven-cols .col-xs-1
+   {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+
+    height: 50%;
+    padding-left: 40px;
+	padding-right: 40px;
+	height: 40px;
+  }
+}
